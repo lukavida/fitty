@@ -67,6 +67,8 @@ export default ((w) => {
     const markAsClean = (f) => (f.dirty = DrawState.IDLE);
 
     const calculateStyles = (f) => {
+        if (!f || !f.element || !f.element.parentNode) return;
+
         // get available width from parent node
         f.availableWidth = f.element.parentNode.clientWidth;
 
