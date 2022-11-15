@@ -92,6 +92,7 @@ export default ((w) => {
     const shouldRedraw = (f) =>
         f.dirty !== DrawState.DIRTY_LAYOUT ||
         (f.dirty === DrawState.DIRTY_LAYOUT &&
+            f.element.parentNode &&
             f.element.parentNode.clientWidth !== f.availableWidth);
 
     // every fitty element is tested for invalid styles
