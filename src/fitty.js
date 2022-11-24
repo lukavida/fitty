@@ -92,6 +92,8 @@ export default ((w) => {
     const shouldRedraw = (f) =>
         f.dirty !== DrawState.DIRTY_LAYOUT ||
         (f.dirty === DrawState.DIRTY_LAYOUT &&
+            f &&
+            f.element &&
             f.element.parentNode &&
             f.element.parentNode.clientWidth !== f.availableWidth);
 
